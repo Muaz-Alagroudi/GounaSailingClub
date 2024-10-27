@@ -1,0 +1,198 @@
+.test-bahr {
+    height: 600px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  
+    @media (max-width: 745px) {
+      flex-direction: column;
+      height: 100%;
+    }
+  
+    .img-container {
+      width: 50%;
+  
+      @media (max-width: 745px) {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 400px;
+      }
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .seaweed {
+        font-family: "Seaweed Script", cursive;
+    }
+    .info {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+  
+      @media (max-width: 745px) {
+        width: 100%;
+      }
+  
+      h2 {
+        color: #de542f; // cinnabar
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        margin: 0 auto;
+      }
+  
+      p {
+        color: #0c5c34; // dartmouth-green
+        font-size: 1.2rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+      }
+  
+      .links {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 2rem;
+  
+        a {
+          color: #56bab8; // verdigris
+          font-size: 2rem;
+          transition: color 0.3s ease;
+  
+          &.fb:hover {
+            background: rgb(0, 98, 255);
+            background-clip: text;
+            color: transparent;
+          }
+  
+          &.tk:hover {
+            background: rgb(255, 0, 80);
+            background-clip: text;
+            color: transparent;
+          }
+  
+          &.ig:hover {
+            background: radial-gradient(
+              circle at 30% 107%,
+              #fdf497 0%,
+              #fdf497 5%,
+              #fd5949 45%,
+              #d6249f 60%,
+              #285aeb 90%
+            );
+            background-clip: text;
+            color: transparent;
+          }
+  
+          &:hover {
+            color: #de542f;
+          }
+  
+          i {
+            font-size: 2rem;
+          }
+        }
+      }
+  
+      @media (max-width: 768px) {
+        .test-bahr {
+          flex-direction: column;
+        }
+  
+        h2 {
+          font-size: 2rem;
+        }
+  
+        p {
+          font-size: 1rem;
+          padding: 0 1rem;
+        }
+  
+        .links {
+          gap: 1rem;
+  
+          a {
+            font-size: 1.8rem;
+  
+            i {
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Pop-up related styles
+.closed{
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 20px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 8;
+    img{
+        width:100px;
+        height: 100px;
+        object-fit: contain;
+    }
+}
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+  
+    .test-bahr {
+      height: auto;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+  
+      @media (max-width: 745px) {
+        flex-direction: column;
+        height: 100%;
+      }
+    }
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+  
+    &:hover {
+      color: #de542f; // Cinnabar hover color
+    }
+  }
+  

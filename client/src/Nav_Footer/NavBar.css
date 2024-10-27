@@ -1,0 +1,148 @@
+:root {
+  --tangerine: #e98a2eff;
+  --verdigris: #56bab8ff;
+  --cinnabar: #de542f;
+  --picton-blue: #07a2daff;
+  --black: #000000ff;
+  --dartmouth-green: #0c5c34ff;
+  --pantone: #71644c;
+  --light-pantone: #f1eedb;
+}
+
+.navBar {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: var(--pantone); */
+  background: #021526;
+
+  font-size: 1.2rem;
+  transition: all 0.5 ease-in;
+  /* font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif; */
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+.menu {
+  font-size: 2rem;
+  display: none;
+  position: absolute;
+  margin-right: 0.8rem;
+  right: 0;
+}
+.navBar a,
+a:visited,
+a:active {
+  transition: all 0.15s ease-in;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+/* .navBar a:not(.active):hover {
+  scale: 1.2; 
+  background-color:#fff;
+} */
+
+.navBar ul {
+  display: flex;
+  position: sticky;
+  top: 0;
+  margin-right: 1rem;
+  /* make vh -> 100% to remove keep navbar */
+}
+
+/* .active {
+  border: 2px solid var(--light-accent);
+} */
+
+.navBar ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navBar ul li a {
+  display: block;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.navBar .logo {
+  /* background-color: red; */
+  width: 7rem;
+  height: 3rem;
+  font-weight: bold;
+  font-size: 1.7rem;
+  margin-left: 10px;
+  overflow: hidden;
+}
+
+.navBar .logo a img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+@media (max-width: 600px) {
+  .navBar {
+    flex-direction: column;
+    align-items: start;
+    color: black;
+  }
+
+  .navBar a,
+  a:visited,
+  a:active {
+    transition: all 0.15s ease-in;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+  .navBar ul {
+    position: fixed;
+    background-color: var(--light-pantone);
+
+    top: 0;
+    height: 100%;
+    right: -100%;
+    width: 300px;
+    flex-direction: column;
+    box-shadow: -7px 0 8px 3px rgba(0, 0, 0, 0.678);
+    transition: right 0.5s ease-out;
+    z-index: 10;
+    color: black;
+  }
+  .menu {
+    color: aliceblue;
+    position: absolute;
+    display: block;
+  }
+  .navBar ul.open {
+    margin: 0;
+    right: 0;
+  }
+  .navBar ul li {
+    width: 100%;
+    text-align: left;
+  }
+  .navBar ul li a {
+    display: block;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem;
+    border-radius: 0.2rem;
+  }
+
+  .navBar a:not(.active):hover {
+    scale: 1;
+    /* background-color:#fff; */
+  }
+  .overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}

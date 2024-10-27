@@ -1,0 +1,73 @@
+// BoatForm.scss
+
+$primary-color: #007bff;
+$background-color: #f7f7f7;
+$border-radius: 10px;
+$input-padding: 10px;
+$font-family: 'Arial', sans-serif;
+
+.boat-form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: $background-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    color: $primary-color;
+    font-family: $font-family;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 5px;
+      color: #333;
+      font-family: $font-family;
+    }
+
+    input,
+    textarea {
+      padding: $input-padding;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: $border-radius;
+      font-family: $font-family;
+      font-size: 1rem;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    input[type="file"] {
+      padding: 0;
+    }
+
+    button {
+      background-color: $primary-color;
+      color: #fff;
+      padding: $input-padding;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+      font-family: $font-family;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
