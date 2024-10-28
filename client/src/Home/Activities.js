@@ -88,7 +88,7 @@ function Activities() {
         <div className="activity" key={activity.name}>
           <div className="image-container">
             <img
-              src={`http://${process.env.REACT_APP_BACKEND}/images/activitiesWebpComp/${activity.image}.webp`}
+              src={`http://${process.env.REACT_APP_BACKEND}/images/ActivitiesWebpComp/${activity.image}.webp`}
               alt={activity.name}
               loading="lazy"
             ></img>

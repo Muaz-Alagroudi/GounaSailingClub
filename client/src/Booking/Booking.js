@@ -56,7 +56,7 @@ function Booking() {
           <Link to="/booking/booking-class">
             <div className="boat-card" onClick={() => {}}>
               <img
-                src={`http://${process.env.REACT_APP_BACKEND}/images/activitiesWebpComp/beach-bg.webp`}
+                src={`http://${process.env.REACT_APP_BACKEND}/images/ActivitiesWebpComp/beach-bg.webp`}
                 alt="Sailing Class"
                 className="boat-image"
               />
