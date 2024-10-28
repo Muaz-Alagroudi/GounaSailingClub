@@ -15,7 +15,7 @@ function Booking() {
   useEffect(() => {
     const fetchBoats = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/boats");
+        const response = await axios.get(`http://${process.env.REACT_APP_BACKEND}/api/boats`);
         setBoats(response.data);
         setLoading(false);
       } catch (err) {
@@ -56,7 +56,7 @@ function Booking() {
           <Link to="/booking/booking-class">
             <div className="boat-card" onClick={() => {}}>
               <img
-                src="http://localhost:4000/images/activitiesWebpComp/beach-bg.webp"
+                src={`http://${process.env.REACT_APP_BACKEND}/images/activitiesWebpComp/beach-bg.webp`}
                 alt="Sailing Class"
                 className="boat-image"
               />

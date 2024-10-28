@@ -6,10 +6,10 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 
-const SECRET_KEY = "1qw2";
+const SECRET_KEY = `${process.env.AUTHKEY}`;
 
 const genToken = (_id) => {
-  return jwt.sign({ _id }, SECRET_KEY, { expiresIn: "10m" });
+  return jwt.sign({ _id }, SECRET_KEY, { expiresIn: "75m" });
 };
 
 Router.get("/", async (req, res) => {

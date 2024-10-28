@@ -53,7 +53,7 @@ function BookingForm() {
     const fetchBoatName = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/boats/${boatId.id}`
+          `http://${process.env.REACT_APP_BACKEND}/api/boats/${boatId.id}`
         );
         setBoatName(response.data.name);
       } catch (error) {
@@ -91,7 +91,7 @@ function BookingForm() {
 
     try {
       const slotData = await axios.get(
-        `http://localhost:4000/api/booking/available/${boatId.id}/${newDate}`
+        `http://${process.env.REACT_APP_BACKEND}/api/booking/available/${boatId.id}/${newDate}`
       );
 
       if (
@@ -210,7 +210,7 @@ function BookingForm() {
     console.log(bookingData);
 
     try {
-      await axios.post("http://localhost:4000/api/booking", bookingData);
+      await axios.post(`http://${process.env.REACT_APP_BACKEND}/api/booking`, bookingData);
       // notifySuccess('Booking Successful');
 
       setIsPopupOpen(false);

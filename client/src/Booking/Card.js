@@ -18,7 +18,7 @@ function BoatCard({ boat, onClick }) {
       )}{" "}
       {/* Loader text or spinner */}
       <img
-        src={`http://localhost:4000/images/boats/${boat.images[0]}`}
+        src={`http://${process.env.REACT_APP_BACKEND}/images/boats/${boat.images[0]}`}
         alt={boat.name}
         className="boat-image"
         onLoad={handleImageLoad} // Event handler for image load

@@ -14,7 +14,7 @@ function Protect({ children }) {
 
   const getAuth = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/auth");
+      const response = await axios.get(`http://${process.env.REACT_APP_BACKEND}/api/auth`);
       console.log(response.status);
       setIsAuthenticated(true);
 

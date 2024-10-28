@@ -66,7 +66,7 @@ function BookingForm() {
     };
 
     try {
-      await axios.post("http://localhost:4000/api/booking-class", bookingData);
+      await axios.post(`http://${process.env.REACT_APP_BACKEND}/api/booking-class`, bookingData);
       notifySuccess('Booking Successful')
 
       setIsPopupOpen(false);

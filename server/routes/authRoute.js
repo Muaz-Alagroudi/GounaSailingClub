@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 Router.get('/',  (req, res)=> {
     try {
         const token = req.cookies.token;
-        const x = jwt.verify(token, '1qw2');
+        const x = jwt.verify(token, `${process.env.AUTHKEY}`);
         res.status(200).json({ message: "Access granted"});
     
 

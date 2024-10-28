@@ -17,7 +17,7 @@ const PORT = 4000;
 // Middleware
 // CORS configuration
 const corsOptions = {
-  origin: 'http://localhost:3000',  // Allow your frontend app's origin
+  origin: 'http://92.113.31.168:3000',  // Allow your frontend app's origin
   credentials: true,  // Allow credentials (cookies, authorization headers)
 };
 

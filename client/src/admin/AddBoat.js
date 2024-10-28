@@ -33,7 +33,7 @@ const AddBoat = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:4000/api/boats", data, {
+      const response = await axios.post(`http://${process.env.REACT_APP_BACKEND}/api/boats`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

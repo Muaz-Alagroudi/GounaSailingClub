@@ -22,7 +22,7 @@ function DashBoard() {
   useEffect(() => {
     const fetchBoats = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/boats");
+        const response = await axios.get(`http://${process.env.REACT_APP_BACKEND}/api/boats`);
         setBoats(response.data);
         // setLoading(false);
       } catch (err) {
@@ -79,13 +79,13 @@ function DashBoard() {
   }, []);
 
   const fetchBoatBookings = async () => {
-    const response = await axios.get(`http://localhost:4000/api/booking`);
+    const response = await axios.get(`http://${process.env.REACT_APP_BACKEND}/api/booking`);
     setBookings(response.data);
   };
 
   const fetcClassBookings = async () => {
     const classResponse = await axios.get(
-      `http://localhost:4000/api/booking-class`
+      `http://${process.env.REACT_APP_BACKEND}/api/booking-class`
     );
     setClasses(classResponse.data);
   };
@@ -93,7 +93,7 @@ function DashBoard() {
   const handleAccept = async (type, id) => {
     try {
       if (type === "boat") {
-        await axios.patch(`http://localhost:4000/api/booking/accept/${id}`);
+        await axios.patch(`http://${process.env.REACT_APP_BACKEND}/api/booking/accept/${id}`);
         setBookings((prevBookings) =>
           prevBookings.map((booking) =>
             booking._id === id ? { ...booking, status: "Accepted" } : booking
@@ -101,7 +101,7 @@ function DashBoard() {
         );
       } else {
         await axios.patch(
-          `http://localhost:4000/api/booking-class/accept/${id}`
+          `http://${process.env.REACT_APP_BACKEND}/api/booking-class/accept/${id}`
         );
         setClasses((prevBookings) =>
           prevBookings.map((booking) =>
@@ -118,7 +118,7 @@ function DashBoard() {
   const handleDecline = async (type, id) => {
     try {
       if (type === "boat") {
-        await axios.patch(`http://localhost:4000/api/booking/reject/${id}`);
+        await axios.patch(`http://${process.env.REACT_APP_BACKEND}/api/booking/reject/${id}`);
         setBookings((prevBookings) =>
           prevBookings.map((booking) =>
             booking._id === id ? { ...booking, status: "Rejected" } : booking
@@ -126,7 +126,7 @@ function DashBoard() {
         );
       } else {
         await axios.patch(
-          `http://localhost:4000/api/booking-class/reject/${id}`
+          `http://${process.env.REACT_APP_BACKEND}/api/booking-class/reject/${id}`
         );
         setClasses((prevBookings) =>
           prevBookings.map((booking) =>
@@ -154,7 +154,7 @@ function DashBoard() {
     try {
       // Update the server
       await axios.patch(
-        `http://localhost:4000/api/boats/${newStatus}/${boatId}`
+        `http://${process.env.REACT_APP_BACKEND}/api/boats/${newStatus}/${boatId}`
       );
       notifySuccess(`Boat status updated to ${newStatus}`);
     } catch (error) {
@@ -171,13 +171,13 @@ function DashBoard() {
   const handleDelete = async (type, id) => {
     try {
       if (type === "boat") {
-        await axios.delete(`http://localhost:4000/api/booking/${id}`);
+        await axios.delete(`http://${process.env.REACT_APP_BACKEND}/api/booking/${id}`);
         // Remove deleted booking from state
         setBookings((prevBookings) =>
           prevBookings.filter((booking) => booking._id !== id)
         );
       } else {
-        await axios.delete(`http://localhost:4000/api/booking-class/${id}`);
+        await axios.delete(`http://${process.env.REACT_APP_BACKEND}/api/booking-class/${id}`);
         // Remove deleted booking from state
         setClasses((prevClasses) =>
           prevClasses.filter((booking) => booking._id !== id)
@@ -203,7 +203,7 @@ function DashBoard() {
   const handleBookBoat = async () => {
     try {
       alert(`${slots.slot1} ${slots.slot2} ${slots.slot3}`);
-      await axios.post(`http://localhost:4000/api/booking`, {
+      await axios.post(`http://${process.env.REACT_APP_BACKEND}/api/booking`, {
         bookedBy: "Admin",
         boatName: selectedBoat.name,
         boatId: selectedBoat._id,
@@ -355,7 +355,7 @@ function DashBoard() {
           {boats.map((boat) => (
             <div className="admin-card" key={boat.id}>
               <img
-                src={`http://localhost:4000/images/boats/${boat.images[0]}`}
+                src={`http://${process.env.REACT_APP_BACKEND}/images/boats/${boat.images[0]}`}
                 alt={boat.name}
               ></img>
               <h2>
@@ -376,7 +376,7 @@ function DashBoard() {
           {boats.map((boat) => (
             <div className="admin-card" key={boat.id}>
               <img
-                src={`http://localhost:4000/images/boats/${boat.images[0]}`}
+                src={`http://${process.env.REACT_APP_BACKEND}/images/boats/${boat.images[0]}`}
                 alt={boat.name}
               />
               <h2>{boat.name}</h2>
