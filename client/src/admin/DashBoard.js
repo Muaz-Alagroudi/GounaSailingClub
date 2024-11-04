@@ -224,6 +224,7 @@ function DashBoard() {
       <NavBar />
       <div className="dashboard-container">
         <h1>Admin Dashboard</h1>
+        <h1>{process.env.REACT_APP_BACKEND}</h1>
         <h2>Boat Bookings</h2>
         {/* Boat Bookings Section */}
         <div className="booking-section">
@@ -351,7 +352,7 @@ function DashBoard() {
             </div>
           )}
         </div>
-        {/* <div className="boats">
+        <div className="boats">
           {boats.map((boat) => (
             <div className="admin-card" key={boat.id}>
               <img
@@ -369,10 +370,12 @@ function DashBoard() {
                 />
                 <span className="slider"></span>
               </label>
+              <button onClick={() => openModal(boat)}>Book</button>
+
             </div>
           ))}
-        </div> */}
-        <div className="boats">
+        </div>
+        {/* <div className="boats">
           {boats.map((boat) => (
             <div className="admin-card" key={boat.id}>
               <img
@@ -391,7 +394,7 @@ function DashBoard() {
               <button onClick={() => openModal(boat)}>Book</button>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Modal */}
         {modalOpen && (

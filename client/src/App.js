@@ -5,6 +5,8 @@ import Protect from "./admin/Protect.js";
 
 import Home from "./Home/Home.js";
 import Booking from "./Booking/Booking.js";
+import BookingNew from "./Booking/BookingNew.js";
+
 import Login from "./login/Login.js";
 import BookingForm from "./Booking/BookingForm.js";
 import CBookingForm from "./Booking/CBookingForm.js";
@@ -28,6 +30,9 @@ const router = createBrowserRouter([
   },
   {
     path: "/login", element: <Login />,
+  },
+  {
+    path: "/test", element: <BookingNew />,
   }
 ]);
 

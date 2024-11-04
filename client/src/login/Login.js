@@ -30,6 +30,8 @@ function Login() {
         formData
         , { withCredentials: true }
       );
+      console.log(login);
+      console.log(formData);
       navigate('/admin')
     } catch (err) {
       alert(err.message);

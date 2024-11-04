@@ -83,7 +83,7 @@ Router.post("/login", async (req, res) => {
       res.cookie("token", token, {
         httpOnly: true, // Cannot be accessed via JavaScript
         // secure: true, // Ensure this is true if you're using HTTPS
-        sameSite: "strict", // To prevent CSRF
+        // sameSite: "strict",
         maxAge: 3600000, // 1 hour
       });
       res.status(200).json({
