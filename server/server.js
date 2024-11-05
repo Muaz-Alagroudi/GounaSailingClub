@@ -6,7 +6,7 @@ const bookingRoute = require("./routes/bookingRoute");
 const classRoute = require("./routes/classRoute");
 const userRoute = require("./routes/userRoute");
 const authRoute = require("./routes/authRoute");
-const paymobRoute = require("./routes/paymobRoute");
+const paymobRoute = require("./routes/paymobRoute.js");
 
 const cookieParser = require("cookie-parser");
 

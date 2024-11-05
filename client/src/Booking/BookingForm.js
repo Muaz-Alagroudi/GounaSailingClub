@@ -307,6 +307,7 @@ function BookingForm() {
     }
 
     try {
+      const addBookings = await axios.post('https://process.env.REACT_APP_BACKEND/api/booking', formData);
       await handleCheckout(); // Trigger Paymob checkout
     } catch (error) {
       toast.error("Checkout failed");
