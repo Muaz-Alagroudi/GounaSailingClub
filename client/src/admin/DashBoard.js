@@ -257,6 +257,9 @@ function DashBoard() {
                   <strong>Booked at:</strong> {booking.createdAt}
                 </p>
                 <p>
+                  <strong>Drop off:</strong> {booking.dropOff}
+                </p>
+                <p>
                   <strong>Slots: </strong>
 
                   {slotText(

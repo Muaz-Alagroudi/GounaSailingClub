@@ -13,6 +13,7 @@ const bookingSchema = new mongoose.Schema({
     slot2: {type: Boolean},
     slot3: {type: Boolean},
     status: {type: String},
+    dropOff: {type: Boolean},
 },{
     timestamps: true
 });

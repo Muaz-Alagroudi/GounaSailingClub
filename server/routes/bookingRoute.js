@@ -75,6 +75,7 @@ Router.post("/", async (req, res) => {
       slot2,
       slot3,
       status,
+      dropOff,
     } = req.body;
     const booking = new Booking({
       bookedBy: bookedBy,
@@ -89,6 +90,7 @@ Router.post("/", async (req, res) => {
       slot2: slot2,
       slot3: slot3,
       status,
+      dropOff,
     });
     await booking.save();
     res
