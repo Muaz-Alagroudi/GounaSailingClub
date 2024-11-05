@@ -1,7 +1,7 @@
 const express = require("express");
 const Router = express.Router();
 
-app.post('/', async (req, res) => {
+Router.post('/', async (req, res) => {
   const transactionData = req.body;
 
   if (transactionData.success) {
